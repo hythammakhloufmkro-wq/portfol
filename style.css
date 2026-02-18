@@ -1,0 +1,212 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif;
+  /* Use a dark overlay on top of the board image to echo the hero collage */
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('board.png');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #eaeaea;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #f5f5f5;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+.hero-text p {
+  font-size: 1.3rem;
+  opacity: 0.85;
+}
+
+/* Section styling */
+.section {
+  padding: 60px 20px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ffc107;
+  font-size: 2rem;
+  position: relative;
+}
+
+/* Note card styling */
+.note {
+  background: #fdf6e3;
+  color: #1f1f1f;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  max-width: 800px;
+  transform: rotate(-1.5deg);
+}
+
+.note::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #e54b4b;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6);
+}
+
+/* Experience grid */
+.experience-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.experience-grid .note {
+  flex: 1 1 300px;
+  max-width: 350px;
+}
+
+.experience-grid .note h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.period {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+/* Projects */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.project {
+  width: 320px;
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.project-note {
+  background: #fdf6e3;
+  color: #1f1f1f;
+  padding: 15px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  position: relative;
+  transform: rotate(0.5deg);
+}
+
+.project-note h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.project-note p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Skills list */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  background: #fdf6e3;
+  color: #1f1f1f;
+  margin: 10px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+/* Gallery and video sections */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 220px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video-grid video {
+  width: 320px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
