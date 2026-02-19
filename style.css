@@ -1,9 +1,7 @@
 /* Base styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Helvetica, Arial, sans-serif;
-  /* Use a dark overlay on top of the board image to echo the hero collage */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('board.png');
   background-size: cover;
   background-attachment: fixed;
@@ -11,10 +9,7 @@ body {
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-p {
+h1, h2, h3, p {
   margin: 0 0 1rem 0;
 }
 
@@ -43,13 +38,14 @@ p {
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   letter-spacing: 1px;
+  color: #ffffff;
 }
 
 .hero-text p {
   font-size: 1.3rem;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 /* Section styling */
@@ -61,8 +57,9 @@ p {
   text-align: center;
   margin-bottom: 40px;
   color: #ffc107;
-  font-size: 2rem;
+  font-size: 2.2rem;
   position: relative;
+  font-weight: bold;
 }
 
 /* Note card styling */
@@ -114,43 +111,20 @@ p {
   margin-bottom: 0.6rem;
 }
 
-/* Projects */
-.project-grid {
+/* Video and Gallery grid */
+.video-grid, .gallery-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 }
 
-.project {
+.video-grid video, .gallery-grid img {
   width: 320px;
-}
-
-.project img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
-
-.project-note {
-  background: #fdf6e3;
-  color: #1f1f1f;
-  padding: 15px;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-  position: relative;
-  transform: rotate(0.5deg);
-}
-
-.project-note h3 {
-  margin-top: 0;
-  font-size: 1.1rem;
-}
-
-.project-note p {
-  font-size: 0.9rem;
-  line-height: 1.4;
 }
 
 /* Skills list */
@@ -173,6 +147,7 @@ p {
   font-size: 0.9rem;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -181,32 +156,56 @@ footer {
   font-size: 0.8rem;
 }
 
-/* Gallery and video sections */
-.gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .experience-grid, .gallery-grid, .video-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-grid .note, .gallery-grid img, .video-grid video {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+  footer {
+    font-size: 0.7rem;
+  }
+
+  .note {
+    max-width: 90%;
+    transform: rotate(0deg);
+  }
 }
 
-.gallery-grid img {
-  width: 220px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
+@media screen and (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
 
-.video-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
+  .hero-text p {
+    font-size: 1rem;
+  }
 
-.video-grid video {
-  width: 320px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  .note {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .skills-list li {
+    font-size: 0.8rem;
+    margin: 5px;
+  }
 }
